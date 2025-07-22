@@ -148,4 +148,21 @@ const observer = new MutationObserver(() => {
   updateOrbsOnThemeChange();
   updateThemeIcon();
 });
-observer.observe(body, { attributes: true, attributeFilter: ['data-theme'] }); 
+observer.observe(body, { attributes: true, attributeFilter: ['data-theme'] });
+
+// Burger menu for mobile nav
+const burger = document.getElementById('burger-menu');
+const navLinks = document.querySelector('.nav-links');
+if (burger && navLinks) {
+  burger.addEventListener('click', function() {
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', !expanded);
+    navLinks.classList.toggle('show');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+} 
