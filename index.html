@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shiwam Srivastava | Software Developer Engineer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+  <canvas id="bg-animation"></canvas>
+  <header>
+    <nav class="fixed-nav">
+      <div class="logo">Shiwam Srivastava</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="socials">
+          <a href="https://www.instagram.com/shiwam_srivastava_?igsh=MWNhd3h0MmZqMjI1cw==" target="_blank" aria-label="Instagram" class="social-icon">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm4.25 3.25A5.25 5.25 0 1 1 6.75 12 5.25 5.25 0 0 1 12 6.75Zm0 1.5A3.75 3.75 0 1 0 15.75 12 3.75 3.75 0 0 0 12 8.25Zm5.25-.5a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"/></svg>
+          </a>
+          <a href="https://github.com/shiwam001" target="_blank" aria-label="GitHub" class="social-icon">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.339-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.749 0 .267.18.577.688.48C19.138 20.2 22 16.448 22 12.021 22 6.484 17.523 2 12 2Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/shiwam-srivastava-09a190266/" target="_blank" aria-label="LinkedIn" class="social-icon">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg>
+          </a>
+        </div>
+        <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle-btn">
+         <span class="theme-icon theme-icon-moon" style="display:inline;"> <!-- Moon SVG -->
+           <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 0 1 12.21 3a7 7 0 1 0 8.79 9.79z" fill="#2acfcf"/></svg>
+         </span>
+         <span class="theme-icon theme-icon-sun" style="display:none;"> <!-- Sun SVG -->
+           <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" fill="#f9a825"/><g stroke="#f9a825" stroke-width="2"><line x1="12" y1="1" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></g></svg>
+         </span>
+        </button>
+      </div>
+    </nav>
+    <div class="hero-container">
+      <div class="hero">
+        <h1>Hi, I'm <span>Shiwam Srivastava</span></h1>
+        <h2>Software Developer Engineer</h2>
+        <p>A highly motivated Software Development Engineer with a strong foundation in computer science principles and a passion for building robust, scalable, and efficient software solutions. Experienced in developing web and backend applications using modern programming languages and frameworks, with a keen eye for clean code and system design. Adept at problem-solving, debugging, and collaborating in agile teams to deliver high-quality products on time. Continuously learning and adapting to new technologies to drive innovation and improve user experience. Committed to writing maintainable code, optimizing performance, and contributing to every stage of the development lifecycle—from design to deployment.</p>
+      </div>
+      <div class="hero-image">
+        <img src="WhatsApp Image 2025-07-23 at 01.20.42.jpeg" alt="Shiwam Srivastava" />
+      </div>
+    </div>
+  </header>
+  <main>
+    <section id="about" class="section fade-in" data-scroll>
+      <h2>About Me</h2>
+      <p>
+        
+        I’m Shiwam Srivastava, a passionate Software Development Engineer with a strong drive to create impactful, efficient, and scalable software solutions. My journey in technology began with a curiosity to understand how things work beneath the surface—and has since evolved into a deep commitment to building systems that are not only functional but also maintainable and elegant.
+        
+        I thrive in environments where problem-solving is key. Whether it’s debugging a tricky issue, optimizing performance, or designing system architecture from scratch, I enjoy diving deep into challenges and coming out with clean, logical, and scalable solutions. With a solid foundation in computer science and hands-on experience across the full software development lifecycle, I bring both analytical thinking and practical execution to the table.
+        
+        My expertise spans full-stack development, where I’m comfortable working across both frontend and backend technologies. From designing intuitive user interfaces to developing RESTful APIs and managing databases, I enjoy working on every layer that brings an application to life. I have experience with modern frameworks, cloud services, and version control systems that support collaborative and agile development.
+        
+        Above all, I believe in continuous learning and growth. The tech world is constantly evolving, and I make it a point to stay updated with emerging tools and best practices. I see every project as an opportunity to learn something new and contribute meaningfully to the team and the product.
+        
+        I aspire to use my skills to build software that not only meets business goals but also enhances the lives of its users.
+        
+        ⸻
+        
+        Let me know if you’d like this adapted for a resume, LinkedIn bio, or portfolio intro. </p>
+    </section>
+    <section id="skills" class="section fade-in" data-scroll>
+      <h2>Skills</h2>
+      <div class="skills-cards-scroll">
+        <div class="skill-card">
+          <div class="skill-card-header"><span class="skill-svg"> <!-- HTML5 SVG -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 3h18l-1.5 17L12 21l-7.5-1L3 3zm3.5 3l.5 6h9l.5-6H6.5zm.5 7l.5 5 4.5 1 4.5-1 .5-5h-10z" fill="#e44d26"/></svg>
+          </span>HTML5 / CSS3 / SASS</div>
+          <ul class="skill-points">
+            <li>Semantic, accessible markup</li>
+            <li>Modern layouts (Flexbox, Grid)</li>
+            <li>Responsive, cross-browser design</li>
+            <li>Custom animations & transitions</li>
+            <li>Accessibility best practices</li>
+            <li>SCSS architecture</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-header"><span class="skill-svg"> <!-- JS SVG -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="4" fill="#f7df1e"/><path d="M7.5 17.5l1.5-1c.3.5.6.9 1.3.9.7 0 1.1-.3 1.1-1.3v-5.1h2v5.2c0 2-1.2 2.9-2.9 2.9-1.5 0-2.3-.7-2.9-1.7zm7.2-1.1c.3.6.7 1.1 1.5 1.1.7 0 1.1-.3 1.1-.7 0-.5-.4-.7-1.2-1l-.4-.2c-1.2-.5-2-1.1-2-2.4 0-1.2.9-2.1 2.3-2.1 1 0 1.7.3 2.2 1.2l-1.5 1c-.2-.4-.5-.6-.9-.6-.4 0-.7.2-.7.6 0 .4.2.6.9.9l.4.2c1.4.6 2.2 1.2 2.2 2.5 0 1.4-1.1 2.2-2.6 2.2-1.5 0-2.3-.7-2.7-1.6z" fill="#222"/></svg>
+          </span>JavaScript / TypeScript</div>
+          <ul class="skill-points">
+            <li>ES6+, async/await, modules</li>
+            <li>Type safety & code quality</li>
+            <li>DOM manipulation & events</li>
+            <li>Functional & OOP patterns</li>
+            <li>Testing (Jest, Mocha)</li>
+            <li>Tooling (Webpack, Babel)</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-header"><span class="skill-svg"> <!-- React SVG -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><g><ellipse cx="12" cy="12" rx="10" ry="4.5" stroke="#61dafb" stroke-width="2"/><ellipse cx="12" cy="12" rx="4.5" ry="10" stroke="#61dafb" stroke-width="2"/><circle cx="12" cy="12" r="2" fill="#61dafb"/></g></svg>
+          </span>React / Next.js</div>
+          <ul class="skill-points">
+            <li>Component-driven UI</li>
+            <li>Hooks, state management</li>
+            <li>SSR & static site generation</li>
+            <li>Context API, Redux</li>
+            <li>API integration</li>
+            <li>Performance optimization</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-header"><span class="skill-svg"> <!-- Node SVG -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2l9.5 5.5v9L12 22l-9.5-5.5v-9L12 2zm0 2.2L4.5 7.2v7.6L12 19.8l7.5-5V7.2L12 4.2zm0 3.3a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z" fill="#3c873a"/></svg>
+          </span>Node.js / Express</div>
+          <ul class="skill-points">
+            <li>RESTful API development</li>
+            <li>Middleware & routing</li>
+            <li>Authentication & security</li>
+            <li>Socket.io & real-time apps</li>
+            <li>File uploads & storage</li>
+            <li>API documentation (Swagger)</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-header"><span class="skill-svg"> <!-- Python SVG -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2c-2.2 0-4 1.8-4 4v2h8V6c0-2.2-1.8-4-4-4zm-6 6v2h12V8H6zm0 4v2c0 2.2 1.8 4 4 4h4c2.2 0 4-1.8 4-4v-2H6zm0 4v2c0 2.2 1.8 4 4 4h4c2.2 0 4-1.8 4-4v-2H6z" fill="#3776ab"/></svg>
+          </span>Python</div>
+          <ul class="skill-points">
+            <li>Data analysis & scripting</li>
+            <li>Automation & web scraping</li>
+            <li>Popular libraries (Pandas, NumPy)</li>
+            <li>Flask & FastAPI basics</li>
+            <li>Data visualization (Matplotlib)</li>
+            <li>Jupyter Notebooks</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-header"><span class="skill-svg"> <!-- Database SVG -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="6" rx="8" ry="3" fill="#4db6ac"/><path d="M4 6v8c0 1.7 3.6 3 8 3s8-1.3 8-3V6" stroke="#4db6ac" stroke-width="2" fill="none"/><ellipse cx="12" cy="14" rx="8" ry="3" fill="#4db6ac" fill-opacity=".3"/></svg>
+          </span>SQL / NoSQL Databases</div>
+          <ul class="skill-points">
+            <li>Schema design & queries</li>
+            <li>MongoDB, PostgreSQL, MySQL</li>
+            <li>Data modeling & relationships</li>
+            <li>Aggregation pipelines</li>
+            <li>Database optimization</li>
+            <li>Backup & migration</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-header"><span class="skill-svg"> <!-- Analytics SVG -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="10" width="3" height="8" fill="#f9a825"/><rect x="8.5" y="6" width="3" height="12" fill="#f9a825"/><rect x="14" y="13" width="3" height="5" fill="#f9a825"/></svg>
+          </span>Data Analytics</div>
+          <ul class="skill-points">
+            <li>Data cleaning & visualization</li>
+            <li>Dashboards & reporting</li>
+            <li>Insights from large datasets</li>
+            <li>ETL processes</li>
+            <li>Excel & Google Sheets</li>
+            <li>Statistical analysis</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-header"><span class="skill-svg"> <!-- Git SVG -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="2" fill="#f34f29"/><circle cx="18" cy="6" r="2" fill="#f34f29"/><circle cx="18" cy="18" r="2" fill="#f34f29"/><path d="M7.7 10.7l6.6-3.4M7.7 13.3l6.6 3.4" stroke="#f34f29" stroke-width="2"/></svg>
+          </span>Git & Version Control</div>
+          <ul class="skill-points">
+            <li>Branching & merging</li>
+            <li>Collaboration workflows</li>
+            <li>CI/CD basics</li>
+            <li>GitHub Actions</li>
+            <li>Code reviews</li>
+            <li>Release management</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-header"><span class="skill-svg"> <!-- VS Code SVG -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 17.25V6.75c0-.66.54-1.2 1.2-1.2h15.6c.66 0 1.2.54 1.2 1.2v10.5c0 .66-.54 1.2-1.2 1.2H4.2c-.66 0-1.2-.54-1.2-1.2z" fill="#007acc"/><path d="M8.5 8.5l7 7m0-7l-7 7" stroke="#fff" stroke-width="2"/></svg>
+          </span>VS Code / Jupyter</div>
+          <ul class="skill-points">
+            <li>Productive coding environment</li>
+            <li>Extensions & customization</li>
+            <li>Interactive data exploration</li>
+            <li>Remote development</li>
+            <li>Debugging tools</li>
+            <li>Notebook sharing</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-header"><span class="skill-svg"> <!-- Agile SVG -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#00bcd4" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#00bcd4" stroke-width="2"/></svg>
+          </span>Agile / Scrum</div>
+          <ul class="skill-points">
+            <li>Iterative development</li>
+            <li>Team collaboration</li>
+            <li>Continuous improvement</li>
+            <li>Backlog management</li>
+            <li>Daily standups</li>
+            <li>Sprint planning</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="section fade-in" data-scroll>
+      <h2>Projects</h2>
+      <div class="projects-cards-scroll">
+        <div class="project-card">
+          <img src="Screenshot 2025-07-23 at 1.37.29 AM.png" alt="Smart Expense Tracker" class="project-img" />
+          <div class="project-content">
+            <h3>Smart Expense Tracker</h3>
+            <p>A web app to track expenses, visualize spending, and set budgets. Features smart categorization, analytics, and multi-device sync for personal finance management.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="Screenshot 2025-07-23 at 1.38.56 AM.png" alt="Stock Market Tracker" class="project-img" />
+          <div class="project-content">
+            <h3>Stock Market Tracker</h3>
+            <p>Real-time stock market dashboard with live charts, portfolio tracking, and news integration. Built with modern APIs and responsive design for investors and enthusiasts.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="Screenshot 2025-07-23 at 1.40.01 AM.png" alt="AI Chatbot for College Helpdesk" class="project-img" />
+          <div class="project-content">
+            <h3>AI Chatbot for College Helpdesk</h3>
+            <p>An AI-powered chatbot to answer student queries, provide campus info, and automate helpdesk tasks. Integrates NLP and knowledge base for 24/7 support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="section fade-in" data-scroll>
+      <h2>Contact</h2>
+      <div class="contact-container">
+        <form id="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Shiwam Srivastava. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html> 
